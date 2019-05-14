@@ -8,11 +8,18 @@
   <title>Document</title>
 </head>
 <body>
-  <div class="columns">
+  <div class="columns" style="margin-top: 100px">
     <div class="column"></div>
-    <div class="column is-half ">
+    <div class="column is-half box">
 
-      <label class="label is-large">Ingresar Producto</label>
+      <div class="navbar">
+      <h4 class="title is-4">Nuevo Producto</h4>
+      <div class="navbar-end">
+        <div class="navbar-item">
+      <a class="button is-warning" onclick="location.href='index.html'">Volver</a>
+      </div>
+      </div>
+      </div>
       <form action="insertPr.php" method="post">
         <div class="field">
           <label class="label">Name</label>
