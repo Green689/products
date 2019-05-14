@@ -15,7 +15,7 @@
       <h4 class="title is-4">Productos</h4>
       <div class="navbar-end">
         <div class="navbar-item">
-      <a class="button is-primary" onclick="location.href='insertProduct.php'">Nuevo Producto</a>
+      <a class="button is-primary" onclick="location.href='insertProduct.html'">Nuevo Producto</a>
       </div>
       </div>
       </div>
@@ -50,7 +50,7 @@
                     "<td>" . $value["product_name"] . "</td>" .
                     "<td style='float: right'>" . $value["price"] . "</td>" .
                     "<td>"; if($value["is_active"] == 1){ echo "Activo";} else {echo "Inactivo";};
-                    echo "</td><td><a href='updateProduct.php'>Editar</a></td><td><a href='deleteProdect.php'>Eliminar</a></td></tr>";
+                    echo "</td><td><a href='updateProduct.html'>Editar</a></td><td><a href='deleteProduct.php'>Eliminar</a></td></tr>";
                   }
                 }else{
                   echo "nothing";
