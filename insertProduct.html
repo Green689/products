@@ -8,40 +8,40 @@
   <title>Document</title>
 </head>
 <body>
-<div class="columns">
-  <div class="column"></div>
-  <div class="column is-half ">
+  <div class="columns">
+    <div class="column"></div>
+    <div class="column is-half ">
 
-    <label class="label is-large">Ingresar Producto</label>
-    <form action="insertPr.php" method="post">
-      <div class="field">
-        <label class="label">Name</label>
-        <div class="control">
-          <input class="input" required type="text" pattern="^[a-zA-Z0-9 ]{1,10}$" name="name" placeholder="nombre del producto">
-      </div>
-    </div>
-    <div class="field">
-      <label class="label">Price</label>
-      <div class="control">
-      <input class="input" required type="text" pattern="^[0-9,.]{1,5}$" name="price" placeholder="precio">
-    </div>
-  </div>
-  <div class="field">
-  <label class="label">Active</label>
-  <div class="control">
-    <div class="select">
-      <select name="active">
-        <option value="true">Disponible</option>
-        <option value="false">No disponible</option>
-      </select>
-    </div>
-  </div>
-</div>
-      <button class="button is-success">Enviar</button>
-    </form>
+      <label class="label is-large">Ingresar Producto</label>
+      <form action="insertPr.php" method="post">
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" required type="text" pattern="^[a-zA-Z0-9 ]{1,10}$" name="name" placeholder="nombre del producto">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Price</label>
+          <div class="control">
+            <input class="input" required type="text" pattern="^[0-9,.]{1,5}$" name="price" placeholder="precio">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Active</label>
+          <div class="control">
+            <div class="select">
+              <select name="active">
+                <option value="true">Disponible</option>
+                <option value="false">No disponible</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button class="button is-success">Enviar</button>
+      </form>
 
+    </div>
+    <div class="column"></div>
   </div>
-  <div class="column"></div>
-</div>
 </body>
 </html>

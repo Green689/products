@@ -15,23 +15,23 @@
       <label class="label is-large">Modificar Producto</label>
       <form action="udatePr.php" method="post">
 
-      <div class="field">
-        <label class="label">Price</label>
-        <div class="control">
-        <input class="input" required type="text" pattern="^[0-9,.]{1,5}$" name="price" placeholder="precio">
-      </div>
-    </div>
-    <div class="field">
-    <label class="label">Active</label>
-    <div class="control">
-      <div class="select">
-        <select name="active">
-          <option value="true">Disponible</option>
-          <option value="false">No disponible</option>
-        </select>
-      </div>
-    </div>
-  </div>
+        <div class="field">
+          <label class="label">Price</label>
+          <div class="control">
+            <input class="input" required type="text" pattern="^[0-9,.]{1,5}$" name="price" placeholder="precio">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Active</label>
+          <div class="control">
+            <div class="select">
+              <select name="active">
+                <option value="true">Disponible</option>
+                <option value="false">No disponible</option>
+              </select>
+            </div>
+          </div>
+        </div>
         <button class="button is-info">Modificar</button>
       </form>
 
