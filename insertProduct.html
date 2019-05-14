@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <form action="insertPr.php" method="post">
+    <input required type="text" pattern="^[a-zA-Z0-9 ]{1,10}$" name="name" placeholder="nombre del producto">
+    <input required type="text" pattern="^[0-9,.]{1,5}$" name="price" placeholder="precio">
+    <select name="active">
+      <option value="true">Disponible</option>
+      <option value="false">No disponible</option>
+    </select>
+    <button>Enviar</button>
+  </form>
+</body>
+</html>
