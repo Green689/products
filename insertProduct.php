@@ -16,7 +16,7 @@
       <h4 class="title is-4">Nuevo Producto</h4>
       <div class="navbar-end">
         <div class="navbar-item">
-      <a class="button is-warning" onclick="location.href='index.html'">Volver</a>
+      <a class="button is-warning" onclick="location.href='index.php'">Volver</a>
       </div>
       </div>
       </div>

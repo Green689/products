@@ -8,24 +8,6 @@
   <title>Document</title>
 </head>
 <body>
-<?php
-  try {
-      $servername = "localhost";
-      $username = "root";
-      $password = "1234";
-      $dbname = "products";
-      $user = $_POST["user"];
-      $pass = $_POST["pass"];
-
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "select * from producto";
-
-    if($conn){
-      $result = $conn->query($sql)
-    }
-  }
-?>
   <div class="columns" style="margin-top: 100px">
     <div class="column"></div>
     <div class="column is-half box">
@@ -33,7 +15,7 @@
       <h4 class="title is-4">Productos</h4>
       <div class="navbar-end">
         <div class="navbar-item">
-      <a class="button is-primary" onclick="location.href='insertProduct.html'">Nuevo Producto</a>
+      <a class="button is-primary" onclick="location.href='insertProduct.php'">Nuevo Producto</a>
       </div>
       </div>
       </div>
@@ -49,22 +31,38 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Coca cola</td>
-            <td style="float: right">Q5</td>
-            <td>Activo</td>
-            <td><a href="updateProduct.html">Editar</a></td>
-            <td><a>Eliminar</a></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Lays</td>
-            <td style="float: right">Q3</td>
-            <td>Inactivo</td>
-            <td><a href="updateProduct.html">Editar</a></td>
-            <td><a>Eliminar</a></td>
-          </tr>
+          <?php
+            try {
+              $servername = "localhost";
+              $username = "root";
+              $password = "1234";
+              $dbname = "products";
+
+              $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+              $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              $sql = "select * from producto";
+
+              if($conn){
+                $result = $conn->query($sql);
+                foreach($result as $value){
+                  echo "<tr>
+                     <td>" . $value["id"] . "</td>" .
+                    "<td>" . $value["product_name"] . "</td>" .
+                    "<td style='float: right'>" . $value["price"] . "</td>" .
+                    "<td>"; if($value["is_active"] == 1){ echo "Activo";} else {echo "Inactivo";};
+                    echo "</td><td><a href='updateProduct.php'>Editar</a></td><td><a href='deleteProdect.php'>Eliminar</a></td></tr>";
+                  }
+                }else{
+                  echo "nothing";
+                }
+              }
+
+            catch(PDOException $e)
+            {
+              echo $sql . "<br>" . $e->getMessage();
+            }
+            $conn = null;
+          ?>
         </tbody>
       </table>
     </div>
