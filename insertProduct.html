@@ -20,17 +20,17 @@
           </div>
         </div>
       </div>
-      <form action="insertPr.php" method="post">
+      <form name="agregar" action="insertPr.php" method="post">
         <div class="field">
           <label class="label">Name</label>
           <div class="control">
-            <input class="input" required type="text" pattern="^[a-zA-Z0-9 ]{1,10}$" name="name" placeholder="nombre del producto">
+            <input class="input" type="text" pattern="^[a-zA-Z0-9 ]{1,10}$" name="name">
           </div>
         </div>
         <div class="field">
           <label class="label">Price</label>
           <div class="control">
-            <input class="input" required type="text" pattern="^[0-9,.]{1,5}$" name="price" placeholder="precio">
+            <input class="input" type="text" pattern="^[0-9,.]{1,5}$" name="price">
           </div>
         </div>
         <div class="field">
@@ -50,5 +50,8 @@
     </div>
     <div class="column"></div>
   </div>
+  <script type="text/javascript" src="jquery validetion plugin/jquery-3.4.0.js" charset="utf-8"></script>
+  <script type="text/javascript" src="jquery validetion plugin/dist/jquery.validate.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="jquery validetion plugin/form-calidation.js" charset="utf-8"></script>
 </body>
 </html>
