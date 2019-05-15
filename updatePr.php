@@ -14,11 +14,11 @@ try {
   $sql = "UPDATE producto SET price=$price, is_active=$active WHERE id=$id";
   $conn->query($sql);
   echo "New record created successfully";
-  }
+}
 catch(PDOException $e)
-  {
+{
   echo $sql . "<br>" . $e->getMessage();
-  }
+}
 $conn = null;
-header("Location: index.php");s
+header("Location: index.php");
 ?>
