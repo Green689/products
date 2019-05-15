@@ -51,7 +51,7 @@
                     "<td style='text-align: right'>" . $value["price"] . "</td>" .
                     "<td>";
                   if($value["is_active"] == 1){ echo "Activo";} else {echo "Inactivo";};
-                  echo "</td><td><a href='updateProduct.php?id=". $value["id"] . "&name=". $value["product_name"] . "&price=" . $value["price"] . "&active=" . $value["is_active"] ."'>Editar</a></td><td><a href='deleteProduct.php?id=". $value["id"] ."'>Eliminar</a></td></tr>";
+                  echo"</td><td><a href='updateProduct.php?id=". $value["id"] . "&name=". $value["product_name"] . "&price=" . $value["price"] . "&active=" . $value["is_active"] ."'>Editar</a></td><td><a href='deleteProduct.php?id=". $value["id"] ."'>Eliminar</a></td></tr>";
                   }
                 }else{
                   echo "nothing";
