@@ -40,17 +40,18 @@
 
               $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
               $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-              $sql = "select * from producto";
+              $sql = "select * from producto order by is_active DESC, id;";
 
               if($conn){
                 $result = $conn->query($sql);
                 foreach($result as $value){
-                  echo "<tr>
-                     <td>" . $value["id"] . "</td>" .
+                  echo
+                    "<tr><td>" . $value["id"] . "</td>" .
                     "<td>" . $value["product_name"] . "</td>" .
-                    "<td style='float: right'>" . $value["price"] . "</td>" .
-                    "<td>"; if($value["is_active"] == 1){ echo "Activo";} else {echo "Inactivo";};
-                    echo "</td><td><a href='updateProduct.html'>Editar</a></td><td><a href='deleteProduct.php'>Eliminar</a></td></tr>";
+                    "<td style='text-align: right'>" . $value["price"] . "</td>" .
+                    "<td>";
+                  if($value["is_active"] == 1){ echo "Activo";} else {echo "Inactivo";};
+                  echo "</td><td><a href='updateProduct.php?id=". $value["id"] . "&name=". $value["product_name"] . "&price=" . $value["price"] . "&active=" . $value["is_active"] ."'>Editar</a></td><td><a href='deleteProduct.php?id=". $value["id"] ."'>Eliminar</a></td></tr>";
                   }
                 }else{
                   echo "nothing";
